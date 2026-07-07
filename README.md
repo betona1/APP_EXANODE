@@ -5,6 +5,10 @@
 > *A grid puzzle where you snake through every cell, eating numbers strictly in order. Designed on graph paper 30 years ago — reborn as a mobile game.*
 
 <p align="center">
+  <img src="docs/play.gif" width="34%" alt="플레이 영상 — 뱀 경로 완성 후 수돗물이 콸콸 흐르는 클리어 연출">
+</p>
+
+<p align="center">
   <img src="docs/shot-title.png" width="30%" alt="타이틀 — 두 마리 뱀 마스코트">
   <img src="docs/shot-map.png" width="30%" alt="스테이지 맵">
   <img src="docs/shot-clear.png" width="30%" alt="클리어 — 수돗물 연출">
