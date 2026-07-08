@@ -1,5 +1,7 @@
 /// 프로토타입(crdl.html) JS에서 추출한 골든 벡터와 Dart 포팅의 동일성 검증.
 /// golden_levels.json 은 scratchpad/golden.js 가 실제 프로토타입 코드를 실행해 생성.
+library;
+
 import 'dart:convert';
 import 'dart:io';
 

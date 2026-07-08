@@ -22,9 +22,13 @@ List<(int, int)> snakePath(int rows, int cols) {
   final p = <(int, int)>[];
   for (var r = 0; r < rows; r++) {
     if (r.isEven) {
-      for (var c = 0; c < cols; c++) p.add((r, c));
+      for (var c = 0; c < cols; c++) {
+        p.add((r, c));
+      }
     } else {
-      for (var c = cols - 1; c >= 0; c--) p.add((r, c));
+      for (var c = cols - 1; c >= 0; c--) {
+        p.add((r, c));
+      }
     }
   }
   return p;
