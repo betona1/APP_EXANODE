@@ -25,6 +25,21 @@
 | ⛏ **땅파기 (fill)** | 모든 칸을 채우면서 숫자를 순서대로 완성 | 어려움 — 해밀턴 경로 퍼즐 |
 | ✏ **길잇기 (path)** | 숫자만 순서대로 이으면 됨 | 쉬움 |
 
+## 📱 Flutter 앱 (개발 중)
+
+프로토타입을 **Flutter/Dart 네이티브 앱**으로 이식했습니다. 레벨 생성기·규칙 엔진을 Dart로
+포팅했으며, 같은 시드에서 웹과 앱이 **완전히 동일한 레벨**을 만들도록 골든 테스트로 검증합니다.
+
+<p align="center">
+  <img src="docs/app-title.png" width="19%" alt="앱 타이틀">
+  <img src="docs/app-map.png" width="19%" alt="앱 스테이지 맵">
+  <img src="docs/app-play.png" width="19%" alt="앱 플레이 — 뱀 몸통 경로">
+  <img src="docs/app-water.png" width="19%" alt="앱 수돗물 클리어 연출">
+  <img src="docs/app-clear.png" width="19%" alt="앱 별점 클리어 배너">
+</p>
+
+<p align="center"><sub>타이틀 · 스테이지 맵 · 플레이 · 수돗물 클리어 · 별점 배너 (모두 실제 앱 화면)</sub></p>
+
 ## ▶ 바로 해보기
 
 ```
@@ -61,6 +76,7 @@ python tools/crdl_levelgen.py --self-test
 
 | 경로 | 설명 |
 |------|------|
+| `app/` | Flutter 앱 (게임 코어 Dart 포팅 + UI, 릴리스 빌드 가능) |
 | `prototype/crdl.html` | 플레이 가능한 레퍼런스 구현 (단일 파일) |
 | `tools/crdl_levelgen.py` | 항상 풀리는 레벨 생성기 |
 | `tools/crdl_solver.py` | 패턴 솔버/검증기 |
@@ -71,7 +87,8 @@ python tools/crdl_levelgen.py --self-test
 
 - [x] HTML 프로토타입 (마스코트 · 스테이지 맵 · 튜토리얼 · 클리어 연출)
 - [x] 레벨 생성/검증 파이프라인 (Python)
-- [ ] Flutter/Dart 앱 포팅 (앱 내 실시간 레벨 생성)
+- [x] Flutter/Dart 앱 포팅 (앱 내 실시간 레벨 생성, 웹/앱 동일 레벨 골든 검증)
+- [ ] Google Play 출시 (v1 무료)
 - [ ] 레벨 에디터 & 옛 모눈종이 패턴 사진 임포터
 - [ ] 데일리 챌린지 · 테마 스킨
 - [ ] Google Play 출시 → App Store 확장
