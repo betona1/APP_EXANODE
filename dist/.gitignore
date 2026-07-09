@@ -1,5 +1,7 @@
-# APK 원본은 git에 넣지 않고 GitHub 릴리스로 배포한다 (용량 절약).
+# APK/AAB 원본은 git에 넣지 않는다 (용량 절약 + 배포는 릴리스/Play Console).
 *.apk
+*.aab
 *.apk.sha256
+*.aab.sha256
 # 이력 문서는 추적
 !RELEASES.md
