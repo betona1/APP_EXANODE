@@ -2,6 +2,7 @@
 /// WAV 에셋으로 재생. 짧은 효과음이 겹칠 수 있어 플레이어 풀을 라운드로빈.
 library;
 
+import 'dart:async';
 import 'package:audioplayers/audioplayers.dart';
 
 enum Sfx { start, move, eat, clear, lose, thud, water, splash, bubble, star }
@@ -51,16 +52,34 @@ class AudioService {
     }).catchError((_) {});
   }
 
-  /// 물 흐르는 소리 (클리어 연출 동안 지속).
+  double _waterVol = 0.7;
+  Timer? _fade;
+
+  /// 물 흐르는 소리 (클리어 연출 동안 한 번 재생, 루프 없음 — 이음새 클릭 방지).
   void startWater({double volume = 0.7}) {
     if (!enabled || !_ready) return;
+    _fade?.cancel();
+    _waterVol = volume;
     _waterLoop
-      ?..setReleaseMode(ReleaseMode.loop)
+      ?..setReleaseMode(ReleaseMode.stop)
+      ..setVolume(volume)
       ..play(AssetSource(_asset[Sfx.water]!), volume: volume).catchError((_) {});
   }
 
+  /// 급정지 클릭음을 없애려 볼륨을 부드럽게 낮춘 뒤 정지.
   void stopWater() {
-    _waterLoop?.stop().catchError((_) {});
+    if (_waterLoop == null) return;
+    _fade?.cancel();
+    var v = _waterVol;
+    _fade = Timer.periodic(const Duration(milliseconds: 40), (t) {
+      v -= _waterVol / 8; // ~320ms 페이드
+      if (v <= 0) {
+        t.cancel();
+        _waterLoop?.stop().catchError((_) {});
+      } else {
+        _waterLoop?.setVolume(v).catchError((_) {});
+      }
+    });
   }
 
   Future<void> dispose() async {

@@ -59,19 +59,15 @@ class _GameScreenState extends State<GameScreen> with TickerProviderStateMixin {
     await _faucet.forward(); // 낙하 + 착지
     HapticFeedback.heavyImpact();
     ctl.audio.play(Sfx.thud);
-    ctl.audio.play(Sfx.splash);
+    // 수도꼭지 열림과 동시에 물이 쌰악~ 콸콸콸 계속 흐른다
     final ms = (ctl.game.path.length * 70).clamp(1600, 4200);
     _water.duration = Duration(milliseconds: ms);
-    ctl.audio.startWater(volume: 0.6);
+    ctl.audio.startWater(volume: 0.7);
     await _water.forward();
-    ctl.audio.stopWater();
-    ctl.audio.play(Sfx.splash);
+    ctl.audio.stopWater(); // 부드럽게 페이드아웃 (뚝 끊기지 않음)
     _confetti.forward(from: 0);
-    // 별 딩동댕
-    for (var i = 0; i < ctl.earnedStars; i++) {
-      Future.delayed(Duration(milliseconds: 150 + i * 220),
-          () => ctl.audio.play(Sfx.star));
-    }
+    // 별 팡파레 한 번 (딩딩딩 대신 상승음)
+    ctl.audio.play(Sfx.star);
     await Future.delayed(const Duration(milliseconds: 450));
     _clearRunning = false;
     ctl.waterFlowDone();
