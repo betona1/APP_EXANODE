@@ -1,0 +1,86 @@
+{
+  "$comment": "CRDL 홈페이지 게시용 미디어/문안 매니페스트. 홈페이지의 자동화(Claude Code 등)가 이 파일을 파싱해 에셋을 참조·업로드하도록 설계됨. 경로는 저장소 루트 기준 상대경로. 'gitignored: true'인 항목은 저장소에 없으니 'url'(GitHub 릴리스 등)을 사용할 것.",
+  "schemaVersion": 1,
+  "updated": "2026-07-09",
+  "app": {
+    "name": "CRDL",
+    "nameKo": "차례대로",
+    "package": "com.betona.crdl",
+    "genre": "Puzzle / Casual",
+    "price": "Free (no ads)",
+    "platform": "Android",
+    "version": "0.1.0",
+    "testVersion": "0.1.0-test.1",
+    "languages": ["ko","en","hi","bn","ta","te","mr","es","pt","fr","de","it","ru","tr","ja","zh","id","vi","th","ar"],
+    "collectsPersonalData": false,
+    "offline": true,
+    "developer": "betona",
+    "buildInPublic": true
+  },
+  "links": {
+    "sourceCode": "https://github.com/betona1/APP_CRDL",
+    "privacyPolicy": "https://betona1.github.io/APP_CRDL/privacy.html",
+    "release": "https://github.com/betona1/APP_CRDL/releases/tag/v0.1.0-test.1"
+  },
+  "copy": {
+    "tagline": { "ko": "숫자를 차례대로 — 30년 전 모눈종이 퍼즐이 게임이 되다", "en": "Trace the numbers, one after another." },
+    "shortDescription": {
+      "ko": "숫자를 1→N 순서대로 밟는 격자 퍼즐! 갇히면 게임 오버. 귀여운 뱀과 함께 두뇌를 깨워요.",
+      "en": "Step on numbers 1→N across the grid. Get trapped and it's over. A cute snake brain-teaser."
+    },
+    "manualDoc": "homepage/manual.md",
+    "brochureDoc": "homepage/intro.md"
+  },
+  "graphics": {
+    "appIcon": { "path": "store/icon-512.png", "size": "512x512", "desc": "Play 스토어 앱 아이콘 (마스코트)" },
+    "featureGraphic": { "path": "store/feature-1024x500.png", "size": "1024x500", "desc": "스토어 상단 피처 그래픽" },
+    "playGif": { "path": "docs/play.gif", "desc": "실플레이 미리보기 GIF (README/홈페이지용)" }
+  },
+  "screenshots": {
+    "marketing": [
+      { "path": "store/store-01-title.png", "size": "1080x1920", "caption": "숫자를 차례대로" },
+      { "path": "store/store-02-map.png", "size": "1080x1920", "caption": "끝없는 스테이지" },
+      { "path": "store/store-03-play.png", "size": "1080x1920", "caption": "지나온 길은 되돌릴 수 없다" },
+      { "path": "store/store-04-water.png", "size": "1080x1920", "caption": "클리어하면 콸콸!" },
+      { "path": "store/store-05-banner.png", "size": "1080x1920", "caption": "귀여운 뱀과 함께" }
+    ],
+    "localized": [
+      { "path": "store/screenshots/title-hi.png", "locale": "hi", "screen": "title", "size": "1080x2520" },
+      { "path": "store/screenshots/title-ar.png", "locale": "ar", "screen": "title", "size": "1080x2520", "note": "RTL 레이아웃" },
+      { "path": "store/screenshots/title-ja.png", "locale": "ja", "screen": "title", "size": "1080x2520" },
+      { "path": "store/screenshots/title-es.png", "locale": "es", "screen": "title", "size": "1080x2520" },
+      { "path": "store/screenshots/title-zh.png", "locale": "zh", "screen": "title", "size": "1080x2520" },
+      { "path": "store/screenshots/guide-en.png", "locale": "en", "screen": "how-to-play", "size": "1080x2520" },
+      { "path": "store/screenshots/map-en.png", "locale": "en", "screen": "stage-map", "size": "1080x2520" },
+      { "path": "store/screenshots/game-en.png", "locale": "en", "screen": "in-game-hud", "size": "1080x2520" }
+    ]
+  },
+  "video": {
+    "promoShorts": {
+      "path": "media/CRDL_shorts_final.mp4",
+      "gitignored": true,
+      "url": "https://github.com/betona1/APP_CRDL/releases/download/v0.1.0-test.1/CRDL_shorts_final.mp4",
+      "format": "1080x1920 · 30fps · ~16s · with music",
+      "desc": "홍보 쇼츠 (유튜브 쇼츠/릴스용). 저장소에는 없으므로 위 릴리스 URL을 사용하세요.",
+      "titleCandidates": [
+        "30년 전 모눈종이에 그린 퍼즐, 게임이 되다 🐍 #개발일지",
+        "숫자를 차례대로! 뱀이 물길을 뚫는 퍼즐 게임 🚰",
+        "클리어하면 수돗물이 콸콸💦 직접 만든 퍼즐 게임 CRDL"
+      ],
+      "hashtags": "#CRDL #차례대로 #게임개발 #인디게임 #퍼즐게임 #앱개발 #buildinpublic #개발일지 #모바일게임"
+    }
+  },
+  "download": {
+    "testApk": {
+      "path": "dist/CRDL-v0.1.0-test.1.apk",
+      "gitignored": false,
+      "url": "https://github.com/betona1/APP_CRDL/releases/download/v0.1.0-test.1/CRDL-v0.1.0-test.1.apk",
+      "version": "0.1.0-test.1",
+      "versionCode": 2,
+      "sizeBytes": 49072410,
+      "sha256": "90318b688551f27c5e98a61b9c5dd48a41eca3922ffa6e9eec24e1e87500f7d1",
+      "channel": "test-prerelease",
+      "note": "내부 테스트/사이드로드용. Play 스토어 정식 빌드 아님."
+    }
+  }
+}
