@@ -12,7 +12,7 @@ class L10nKo extends L10n {
   String get appTitle => 'Exanode';
 
   @override
-  String get tagline => '차 · 례 · 대 · 로';
+  String get tagline => '엑 · 사 · 노 · 드';
 
   @override
   String get startAdventure => '▶ 모험 시작';
